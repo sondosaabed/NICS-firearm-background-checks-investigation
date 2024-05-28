@@ -14653,8 +14653,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </li>
 <li><a href="#eda">Exploratory Data Analysis</a></li>
     <ul>
-        <li>Question 1: Demographic Factors Vs. Total gun permits issued</li>
-        <li>Question 2: Housing, building permits Vs. Total gun permits issued</li>
+        <li>**Question 1:** Demographic Factors Vs. Total gun permits issued</li>
+        <li>**Question 2:** Housing, building permits Vs. Total gun permits issued</li>
     </ul>
 <li><a href="#conclusions">Conclusions</a></li>
 </ul>
@@ -17239,7 +17239,7 @@ dtype: int64</pre>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <blockquote>
-<p>It is noticed that,</p>
+<p>It is noticed that, the counts are consistently 65 across all states. Each state has multiple entries corresponding to different statistics, with each entry having a count of 65, indicating the number of observations or data points collected for that particular statistic. Some of which are dollars and some of which are percentages.</p>
 </blockquote>
 
 </div>
@@ -20362,124 +20362,6 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote>
-<p>Let's perform standarization feature scaling to the dataset:</p>
-</blockquote>
-
-</div>
-</div>
-</div>
-</div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
-<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
-<span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">merged_dataset</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int64&#39;</span><span class="p">,</span> <span class="s1">&#39;float64&#39;</span><span class="p">]))</span>
-<span class="n">merged_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">merged_dataset</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int64&#39;</span><span class="p">,</span> <span class="s1">&#39;float64&#39;</span><span class="p">]))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">merged_dataset</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-Index: 230 entries, 0 to 592
-Data columns (total 42 columns):
- #   Column                        Non-Null Count  Dtype   
----  ------                        --------------  -----   
- 0   state                         230 non-null    object  
- 1   pop_est                       230 non-null    float64 
- 2   under_5                       230 non-null    float64 
- 3   under_18                      230 non-null    float64 
- 4   over_65                       230 non-null    float64 
- 5   female                        230 non-null    float64 
- 6   white_alone                   230 non-null    object  
- 7   black_african_american_alone  230 non-null    float64 
- 8   aian_alone                    230 non-null    float64 
- 9   asian_alone                   230 non-null    float64 
- 10  nhpi_alone                    230 non-null    float64 
- 11  two_or_more_races             230 non-null    float64 
- 12  hispanic_latino               230 non-null    float64 
- 13  white_alone                   230 non-null    object  
- 14  housing_units                 230 non-null    float64 
- 15  building_permits              230 non-null    float64 
- 16  month                         230 non-null    category
- 17  permit                        230 non-null    float64 
- 18  permit_recheck                230 non-null    float64 
- 19  handgun                       230 non-null    float64 
- 20  long_gun                      230 non-null    float64 
- 21  other                         230 non-null    float64 
- 22  multiple                      230 non-null    int64   
- 23  admin                         230 non-null    float64 
- 24  prepawn_handgun               230 non-null    float64 
- 25  prepawn_long_gun              230 non-null    float64 
- 26  prepawn_other                 230 non-null    float64 
- 27  redemption_handgun            230 non-null    float64 
- 28  redemption_long_gun           230 non-null    float64 
- 29  redemption_other              230 non-null    float64 
- 30  returned_handgun              230 non-null    float64 
- 31  returned_long_gun             230 non-null    float64 
- 32  returned_other                230 non-null    float64 
- 33  rentals_handgun               230 non-null    float64 
- 34  rentals_long_gun              230 non-null    float64 
- 35  private_sale_handgun          230 non-null    float64 
- 36  private_sale_long_gun         230 non-null    float64 
- 37  private_sale_other            230 non-null    float64 
- 38  return_to_seller_handgun      230 non-null    float64 
- 39  return_to_seller_long_gun     230 non-null    float64 
- 40  return_to_seller_other        230 non-null    float64 
- 41  totals                        230 non-null    int64   
-dtypes: category(1), float64(36), int64(2), object(3)
-memory usage: 76.1+ KB
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id='eda'></a></p>
 <h2 id="Exploratory-Data-Analysis">Exploratory Data Analysis<a class="anchor-link" href="#Exploratory-Data-Analysis">&#182;</a></h2><p>In this part, a thourow Expolratory Data Analysis is done in order to answer two main questions:</p>
 
@@ -20493,9 +20375,7 @@ memory usage: 76.1+ KB
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Lastly, you  should perform both single-variable (1d) and multiple-variable (2d) explorations.</li>
-</ul>
+<p>perform both single-variable (1d) and multiple-variable (2d) explorations.</p>
 
 </div>
 </div>
@@ -21135,34 +21015,19 @@ Correlation of hispanic_latino: 0.18741691607463024
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id='conclusions'></a></p>
-<h2 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h2><ul>
-<li>Summarize the results accurately, and point out where additional research can be done or where additional information could be useful.</li>
-<li>Make sure that you are clear with regards to the limitations of your exploration. You should have at least 1 limitation explained clearly.</li>
-<li>If you haven't done any statistical tests, do not imply any statistical conclusions. And make sure you avoid implying causation from correlation!</li>
-<li>cheack all the areas of the rubric.</li>
-</ul>
+<h2 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h2><p>In conclusion, two questions were investigated regarding the</p>
+<p>As for additional research that could be done on this matter, (datsets..)</p>
+<p>The limitations of this exploration is</p>
 
 </div>
 </div>
 </div>
-</div>
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>create a .html or .pdf version of this notebook in the workspace here.</p>
-
-</div>
-</div>
-</div>
-</div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[254]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Running this cell will execute a bash command to convert this notebook to an .html file</span>
@@ -21172,6 +21037,28 @@ Correlation of hispanic_latino: 0.18741691607463024
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>[NbConvertApp] Converting notebook Investigatimg_Ncis_and_Census_data.ipynb to html
+[NbConvertApp] Writing 2241756 bytes to Investigatimg_Ncis_and_Census_data.html
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
