@@ -9,3 +9,26 @@ Gun shops call into this system to ensure that each customer does not have a cri
 The data has been supplemented with state level data from census.gov
 
 https://github.com/BuzzFeedNews/nics-firearm-background-checks/tree/master 
+
+## Conclusions
+
+In conclusion, two questions were investigated regarding the datasets whether the demographic columns affect the total number of gun permits issued and wether the total number of gun permits issued is affected by housing units or building units. In order to answer these questions, the datasets goes through the data cleansing process including handling outliers, duplicates, and missing values finally fixing the inconsistencies btween the datasets and standarizing it into teh year 2016.
+
+### Demographic Factors and Gun Permits
+
+The first question was answered with the following conclusions:
+
+- A negative weak correlation was observed between all age groups and the total number of gun permits, indicating that as age group percentages increase, the number of permits tends to decrease slightly.
+- Initial assumptions suggested that the gender percentage might not significantly affect the total number of permits, given the consistent nature of female population percentages. However, a moderate positive correlation was found between gender percentages and the number of permits, suggesting a potential influence.
+- Analysis of racial demographics revealed various correlations:
+  - Moderate positive correlations were found between higher percentages of Hispanic/Latino and Black/African American populations and the number of gun permits issued.
+  - Moderate negative correlations were observed with Native Hawaiian/Pacific Islander and Two or More Races demographics, while Asian populations showed a very weak negative correlation.
+
+### Housing and Building Units and Gun Permits
+
+The second question was answered with the following conclusions:
+
+- A positive correlation of 0.599 was observed between housing units and the total number of gun permits issued, indicating a moderate relationship.
+- Variability in total gun permits against building permits was noted across states, with some states showing exceptionally high numbers of permits issued.
+- A positive correlation was found between building permits and the total number of gun permits issued.
+
